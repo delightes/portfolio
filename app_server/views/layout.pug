@@ -1,11 +1,35 @@
 doctype html
 html
   head
-    meta(name='viewport', content='width=device-width, initail-scale=1.0')
+    meta(name='viewport',content='width=device-width, initial-scale=1.0')
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    //- CSS 파일
+    link(rel='stylesheet',href='/stylesheets/bootstrap.min.css')
+    link(rel='stylesheet',href='/stylesheets/all.min.css')
+    link(rel='stylesheet',href='/stylesheets/style.css')
+    link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN", crossorigin="anonymous")
   body
-    block content
+    //- JS 파일
     script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js')
-    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js', crossorigin='anonymous')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js',crossorigin='anonymous')
     script(src='/javascripts/bootstrap.min.js')
+
+    //-1. 네비게이션 바
+    nav.navbar.fixed-top.navbar-expand-md
+      .container
+
+        a.navbar-brand(href='https://portfolio-eunsoo.herokuapp.com/') 
+          i.fa.fa-home.fa-2x(area-hidden="true")
+        button.navbar-toggler.navbar-toggler-left(type='button', data-toggle='collapse', data-target='#navbarMain')
+          span.navbar-toggler-icon
+        #navbarMain.navbar-collapse.collapse
+          ul.navbar-nav.ml-auto
+            li.nav-item
+              a.nav-link(href='https://github.com/delightes')
+                i.fa.fa-user-circle-o.fa-2x(area-hidden="true")
+            li.nav-item
+              a.nav-link(href='https://www.instagram.com/n_soo_/') 
+                i.fa.fa-instagram.fa-2x(area-hidden="true")
+
+    .container
+      block content
